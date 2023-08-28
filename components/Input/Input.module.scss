@@ -1,0 +1,46 @@
+.inputContainer {
+	display: flex;
+	align-items: center;
+
+	.customInput {
+		padding: 10px;
+		border-radius: 12px;
+		background-color: #fff;
+		border: 1px solid #ccc;
+		transition: border-color 0.3s ease-in-out;
+
+		&:focus {
+			outline: none;
+			border-color: #ffce7f;
+		}
+	}
+
+	.customInputImage {
+		position: relative;
+		padding-left: 40px;
+		background-image: url('/search.png');
+		background-position: 10px center;
+		background-size: 20px;
+		background-repeat: no-repeat;
+
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			width: 0;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-color: rgba(0, 0, 0, 0.1);
+			transition: width 0.3s ease-in-out;
+		}
+
+		&:hover::before {
+			width: 100%;
+		}
+	}
+
+	.clearButton {
+		margin-left: 5px;
+	}
+}

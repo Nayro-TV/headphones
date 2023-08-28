@@ -1,0 +1,37 @@
+.inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 15px 0;
+
+	.logo {
+		color: #101010;
+		font-size: 25px;
+		font-weight: 700;
+	}
+
+	.list {
+		display: flex;
+		align-items: center;
+		gap: 40px;
+	}
+
+	.item {
+		position: relative;
+		cursor: pointer;
+
+		.count {
+			text-align: center;
+			font-size: 15px;
+			font-weight: 500;
+			color: #fff;
+			position: absolute;
+			top: -8px;
+			right: -10px;
+			border-radius: 50%;
+			background-color: #ffa542;
+			width: 20px;
+			height: 20px;
+		}
+	}
+}

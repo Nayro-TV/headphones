@@ -1,0 +1,77 @@
+{
+	"headphones": [
+		{
+			"id": 1,
+			"title": "Apple BYZ S852I",
+			"originalPrice": 3527,
+			"discountedPrice": 2927,
+			"rating": 4.5,
+			"wireless": false,
+			"imgUrl": "https://ltdfoto.ru/images/2023/08/08/image-1.png"
+		},
+		{
+			"id": 2,
+			"title": "Apple EarPods",
+			"wireless": false,
+			"price": 3670,
+			"rating": 4.8,
+			"imgUrl": "https://ltdfoto.ru/images/2023/08/08/image-2.png"
+		},
+		{
+			"id": 3,
+			"title": "Apple EarPods",
+			"wireless": false,
+			"price": 2300,
+			"rating": 4.2,
+			"imgUrl": "https://ltdfoto.ru/images/2023/08/08/image-3.png"
+		},
+		{
+			"id": 4,
+			"title": "Apple BYZ S852I",
+			"wireless": false,
+			"price": 2550,
+			"rating": 4.7,
+			"imgUrl": "https://ltdfoto.ru/images/2023/08/08/image-1.png"
+		},
+		{
+			"id": 5,
+			"title": "Apple EarPods",
+			"wireless": false,
+			"price": 1510,
+			"rating": 4.9,
+			"imgUrl": "https://ltdfoto.ru/images/2023/08/08/image-2.png"
+		},
+		{
+			"id": 6,
+			"title": "Apple EarPods",
+			"wireless": false,
+			"price": 7220,
+			"rating": 4.4,
+			"imgUrl": "https://ltdfoto.ru/images/2023/08/08/image-3.png"
+		},
+		{
+			"id": 7,
+			"title": "Apple AirPods",
+			"wireless": true,
+			"price": 9527,
+			"rating": 4.6,
+			"imgUrl": "https://ltdfoto.ru/images/2023/08/08/image-4.png"
+		},
+		{
+			"id": 8,
+			"title": "GERLAX GH-04",
+			"wireless": true,
+			"price": 6527,
+			"rating": 4.3,
+			"imgUrl": "https://ltdfoto.ru/images/2023/08/08/image-5.png"
+		},
+		{
+			"id": 9,
+			"title": "BOROFONE BO4",
+			"wireless": true,
+			"price": 7527,
+			"rating": 4.9,
+			"imgUrl": "https://ltdfoto.ru/images/2023/08/08/image-6.png"
+		}
+	]
+}
