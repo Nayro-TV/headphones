@@ -10,28 +10,10 @@ const options = [
 	{ value: 'price', label: 'Цене' },
 ]
 
-interface ISelectSortProps {
-	selectedOption: string
-	onOptionChange: (option: string) => void
-}
+interface ISelectSortProps {}
 
-const SelectSort: FC<ISelectSortProps> = ({
-	selectedOption,
-	onOptionChange,
-}) => {
-	return (
-		<Select
-			classNamePrefix='custom-select'
-			placeholder='Поиск по...'
-			theme={theme => ({
-				...theme,
-				borderRadius: 12,
-			})}
-			options={options}
-			value={options.find(option => option.value === selectedOption)}
-			onChange={option => onOptionChange(option?.value || '')}
-		/>
-	)
+const SelectSort: FC<ISelectSortProps> = () => {
+	return <Select classNamePrefix='select' placeholder='Поиск по...' options={options} />
 }
 
 export default SelectSort

@@ -10,7 +10,7 @@ import SelectSort from '@/components/SelectSort/SelectSort'
 
 const Home = () => {
 	const dispatch = useDispatch<AppDispatch>()
-	const { data, search, sortOption } = useAppSelector(state => state.headphones)
+	const { data, search } = useAppSelector(state => state.headphones)
 
 	useEffect(() => {
 		dispatch(fetchHeadphones())
@@ -19,44 +19,12 @@ const Home = () => {
 	const wiredHeadphones = data.filter(item => !item.wireless)
 	const wirelessHeadphones = data.filter(item => item.wireless)
 
-	const filteredWiredHeadphones = wiredHeadphones.filter(item =>
-		item.title.toLowerCase().includes(search.toLowerCase()),
-	)
-	const filteredWirelessHeadphones = wirelessHeadphones.filter(item =>
-		item.title.toLowerCase().includes(search.toLowerCase()),
-	)
-
-	const sortedWiredHeadphones = wiredHeadphones.slice().sort((a, b) => {
-		if (sortOption === 'rating') {
-			return b.rating - a.rating
-		} else if (sortOption === 'title') {
-			return a.title.localeCompare(b.title)
-		} else if (sortOption === 'price') {
-			return a.price - b.price
-		}
-		return 0
-	})
-
-	const sortedWirelessHeadphones = wirelessHeadphones.slice().sort((a, b) => {
-		if (sortOption === 'rating') {
-			return b.rating - a.rating
-		} else if (sortOption === 'title') {
-			return a.title.localeCompare(b.title)
-		} else if (sortOption === 'price') {
-			return a.price - b.price
-		}
-		return 0
-	})
-
 	return (
 		<>
 			<div className='title'>Наушники</div>
 
 			<div className={styles.blockRow}>
-				<SelectSort
-					selectedOption={sortOption}
-					onOptionChange={option => dispatch(setSortOption(option))}
-				/>
+				<SelectSort />
 				<Input
 					onClear={() => dispatch(setSearch(''))}
 					onChangeInput={e => dispatch(setSearch(e.target.value))}
@@ -68,7 +36,7 @@ const Home = () => {
 			</div>
 
 			<div className='card__list'>
-				{sortedWiredHeadphones.map(item => (
+				{wiredHeadphones.map(item => (
 					<div key={item.id} className='card__item'>
 						<HeadsetCard data={item} />
 					</div>
@@ -77,7 +45,7 @@ const Home = () => {
 
 			<div className='title'>Беспроводные наушники</div>
 			<div className='card__list'>
-				{sortedWirelessHeadphones.map(item => (
+				{wirelessHeadphones.map(item => (
 					<div key={item.id} className='card__item'>
 						<HeadsetCard data={item} />
 					</div>

@@ -3,7 +3,7 @@ import axios from '../../utils/axios'
 import { IHeadPhone } from '@/types'
 
 export const fetchHeadphones = createAsyncThunk<IHeadPhone[]>(
-	'headphones/fetchAll',
+	'headphones/fetchHeadphones',
 	async () => {
 		const { data } = await axios.get('/headphones')
 		return data
@@ -15,7 +15,6 @@ interface IHeadphonesSlice {
 	loading: boolean
 	error: string | null
 	search: string
-	sortOption: string
 }
 
 const initialState: IHeadphonesSlice = {
@@ -23,7 +22,6 @@ const initialState: IHeadphonesSlice = {
 	loading: false,
 	error: null,
 	search: '',
-	sortOption: 'rating',
 }
 
 const headphonesSlice = createSlice({
@@ -32,9 +30,6 @@ const headphonesSlice = createSlice({
 	reducers: {
 		setSearch: (state, action) => {
 			state.search = action.payload
-		},
-		setSortOption: (state, action) => {
-			state.sortOption = action.payload
 		},
 	},
 	extraReducers: builder => {
@@ -53,5 +48,5 @@ const headphonesSlice = createSlice({
 	},
 })
 
-export const { setSearch, setSortOption } = headphonesSlice.actions
+export const { setSearch } = headphonesSlice.actions
 export default headphonesSlice.reducer
